@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="/css/styles.css">
    <script src="js/scripts.js" defer></script>
+   <link rel="shortcut icon" href="/images/icon.ico" type="image/x-icon">
    <title>Romanos x Arábicos</title>
 </head>
+
 <body>
-
-   <h1>Conversor de algarismos Romanos x Arábicos</h1>
-
-   <label>
-
-      Insira números arábicos:
-      <input id="input-arab" value="10" type="number">
-
-      <button onclick="convert()" >Converter</button>
-
-   </label><br>
-
-   Conversão: <div id="result"></div>
-
+   <header>
+      <h1>
+         <span>🔢 Conversor de</span> <br> Algarismos Arábicos <span>para</span> Algarismos Romanos
+      </h1>
+   </header>
+   <main>
+      <div class="convert-area">
+         <div class="insert-area">
+            <label for="input-arab">Número</label>
+            <input name="number" id="input-arab" type="number" min="0" max="999" placeholder="1 até 999">
+            <button onclick="convert()">Converter</button>
+         </div>
+         <div class="result-area">
+            <span>Conversão:</span>
+            <div id="result">...</div>
+         </div>
+      </div>
+      <p>Funciona com números de 1 até 999</p>
+   </main>
+   <footer> Feito por <a href="https://www.linkedin.com/in/mayconhenrique/" target="_blank">Maycon H. Marques</a>.
+   </footer>
 </body>
+
 </html>

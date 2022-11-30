@@ -6,7 +6,15 @@ let r = [
 ]
 
 function convert() {
-   if (input.value.length === 1) {
+   var inputValue = input.value;
+
+   if (+inputValue === 0) {
+      alert('Não existe número romano para Zero (0)');
+      input.value = '';
+      return
+   }
+
+   if (inputValue.length === 1) {
       let number = +input.value;
 
       switch (number) {
@@ -39,9 +47,7 @@ function convert() {
             break;
       }
 
-      input.value = ''
-
-   } else if (input.value.length === 2) {
+   } else if (inputValue.length === 2) {
 
       let numbers = input.value.split('');
 
@@ -77,38 +83,9 @@ function convert() {
             resultArea.innerHTML = r[2] + r[4];
             break;
       }
+      switchU(u);
 
-      switch (u) {
-         case 1:
-            resultArea.innerHTML += r[0];
-            break;
-         case 2:
-            resultArea.innerHTML += r[0] + r[0];
-            break;
-         case 3:
-            resultArea.innerHTML += r[0] + r[0] + r[0];
-            break;
-         case 4:
-            resultArea.innerHTML += r[0] + r[1];
-            break;
-         case 5:
-            resultArea.innerHTML += r[1];
-            break;
-         case 6:
-            resultArea.innerHTML += r[1] + r[0];
-            break;
-         case 7:
-            resultArea.innerHTML += r[1] + r[0] + r[0];
-            break;
-         case 8:
-            resultArea.innerHTML += r[1] + r[0] + r[0] + r[0];
-            break;
-         case 9:
-            resultArea.innerHTML += r[0] + r[2];
-            break;
-      }
-
-   } else if (input.value.length === 3) {
+   } else if (inputValue.length === 3) {
       let numbers = input.value.split('');
 
       let c = +numbers[0];
@@ -144,7 +121,6 @@ function convert() {
             resultArea.innerHTML = r[4] + r[6];
             break;
       }
-
       switch (d) {
          case 1:
             resultArea.innerHTML += r[2];
@@ -174,35 +150,43 @@ function convert() {
             resultArea.innerHTML += r[2] + r[4];
             break;
       }
+      switchU(u);
 
-      switch (u) {
-         case 1:
-            resultArea.innerHTML += r[0];
-            break;
-         case 2:
-            resultArea.innerHTML += r[0] + r[0];
-            break;
-         case 3:
-            resultArea.innerHTML += r[0] + r[0] + r[0];
-            break;
-         case 4:
-            resultArea.innerHTML += r[0] + r[1];
-            break;
-         case 5:
-            resultArea.innerHTML += r[1];
-            break;
-         case 6:
-            resultArea.innerHTML += r[1] + r[0];
-            break;
-         case 7:
-            resultArea.innerHTML += r[1] + r[0] + r[0];
-            break;
-         case 8:
-            resultArea.innerHTML += r[1] + r[0] + r[0] + r[0];
-            break;
-         case 9:
-            resultArea.innerHTML += r[0] + r[2];
-            break;
-      }
+   } else {
+      alert('insira um número dentro do limite (1-999)');
+   }
+
+   input.value = '';
+}
+
+function switchU(u) {
+   switch (u) {
+      case 1:
+         resultArea.innerHTML += r[0];
+         break;
+      case 2:
+         resultArea.innerHTML += r[0] + r[0];
+         break;
+      case 3:
+         resultArea.innerHTML += r[0] + r[0] + r[0];
+         break;
+      case 4:
+         resultArea.innerHTML += r[0] + r[1];
+         break;
+      case 5:
+         resultArea.innerHTML += r[1];
+         break;
+      case 6:
+         resultArea.innerHTML += r[1] + r[0];
+         break;
+      case 7:
+         resultArea.innerHTML += r[1] + r[0] + r[0];
+         break;
+      case 8:
+         resultArea.innerHTML += r[1] + r[0] + r[0] + r[0];
+         break;
+      case 9:
+         resultArea.innerHTML += r[0] + r[2];
+         break;
    }
 }
