@@ -2,7 +2,7 @@
 
 ## Tecnologias utilizadas
 * ``HTML & CSS``
-* ``JavaScript``
+* ``TypeScript``
 
 Funciona com números entre 1 e 999.
 

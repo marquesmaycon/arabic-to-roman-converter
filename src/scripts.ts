@@ -1,5 +1,5 @@
-const input = document.querySelector('#input-arab');
-const resultArea = document.querySelector('#result');
+const input = document.querySelector('#input-arab') as HTMLInputElement;
+const resultArea = document.querySelector('#result') as HTMLDivElement;
 
 let r = [
    'I', 'V', 'X', 'L', 'C', 'D', 'M'
@@ -159,7 +159,7 @@ function convert() {
    input.value = '';
 }
 
-function switchU(u) {
+function switchU(u: number) {
    switch (u) {
       case 1:
          resultArea.innerHTML += r[0];
